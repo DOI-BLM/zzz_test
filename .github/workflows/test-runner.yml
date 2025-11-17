@@ -1,0 +1,19 @@
+name: 🧪 Self-Hosted Runner Test
+
+on:
+  workflow_dispatch:  # Enables manual "Run workflow" button in GitHub
+
+jobs:
+  test-runner:
+    name: Check Runner Connectivity
+    runs-on: [self-hosted]  # Add any additional labels if used
+    steps:
+      - name: ✅ Confirm runner is working
+        run: |
+          echo "Runner is successfully running a GitHub Actions job!"
+          echo "System info:"
+          uname -a
+          echo "Current user:"
+          whoami
+          echo "Working directory:"
+          pwd
